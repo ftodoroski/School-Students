@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-
-  get '/schools', to: "schools#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :students, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  resources :schools, only: [:index, :show]
+
+  # get '/schools', to: "schools#index"
+
 end

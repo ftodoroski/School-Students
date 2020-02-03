@@ -1,0 +1,11 @@
+<h1>Student Account</h1>
+<%= form_for @student do |t|%>
+    <%= t.label 'Name:'%>
+    <%= t.text_field :name %>
+    <%= t.label 'Age:' %>
+    <%= t.number_field :age %>
+    <%= t.collection_select :school_id, School.all, :id, :name %>
+    <%= t.submit 'Submit'%>
+<% end %>
+
+
